@@ -5,6 +5,7 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { PaginationDto } from 'src/common/dto';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 
+
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) { }
@@ -38,7 +39,7 @@ export class ProductsController {
     @Payload() updateProductDto: UpdateProductDto,
   ) {
 
-    return this.productsService.update(updateProductDto.id ,updateProductDto);
+    return this.productsService.update(updateProductDto.id, updateProductDto);
   }
 
   //@Delete(':id')
